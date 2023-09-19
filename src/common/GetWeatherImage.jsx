@@ -12,25 +12,34 @@ const GetWeatherImage = ({ icon }) => {
   console.log(icon, "::cinos");
   switch (icon) {
     case "01d":
+    case "01n":
       return <img className="w-[50px]" src={clearSky} alt="clear sky" />;
     case "02d":
-      return <img src={cloudy} alt="cloudy" />;
+    case "02n":
+      return <img className="w-[50px]" src={cloudy} alt="cloudy" />;
     case "03d":
-      return <img src={clouds} alt="clouds" />;
+    case "03n":
+      return <img className="w-[50px]" src={clouds} alt="clouds" />;
     case "04d":
-      return <img src={Scattered} alt="clouds" />;
+    case "04n":
+      return <img className="w-[50px]" src={Scattered} alt="clouds" />;
     case "09d":
-      return <img src={raining} alt="rain" />;
+    case "09n":
+      return <img className="w-[50px]" src={raining} alt="rain" />;
     case "10d":
-      return <img src={heavyRain} alt="rain" />;
+    case "10n":
+      return <img className="w-[50px]" src={heavyRain} alt="rain" />;
     case "11d":
-      return <img src={storm} alt="storm" />;
+    case "11n":
+      return <img className="w-[50px]" src={storm} alt="storm" />;
     case "13d":
-      return <img src={snow} alt="storm" />;
+    case "13n":
+      return <img className="w-[50px]" src={snow} alt="storm" />;
     case "50d":
-      return <img src={mist} alt="storm" />;
+    case "50n":
+      return <img className="w-[50px]" src={mist} alt="storm" />;
     default:
-      return "unknown"; // Provide a default value for unknown icons
+      return <img className="w-[50px]" src={clearSky} alt="clear sky" />; // Provide a default value for unknown icons
   }
 };
 

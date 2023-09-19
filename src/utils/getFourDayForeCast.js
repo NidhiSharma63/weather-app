@@ -9,7 +9,7 @@ function getFourDayForeCast(data) {
 
     const isAlreadyAdded = accumulator.find((obj) => obj.day === currentDay);
     if (!isAlreadyAdded) {
-      accumulator.push({ day: currentDay, temp: item.main.temp, weather: item.weather[0]?.main });
+      accumulator.push({ day: currentDay, temp: item.main.temp, weather: item.weather[0]?.icon });
     }
 
     return accumulator;
