@@ -29,7 +29,7 @@ const useChart = () => {
         {
           label: "Hourly forecast in celsius",
           data: temp,
-          borderColor: "rgb(75, 192, 192)",
+          borderColor: "rgb(75, 192, 192,0.9)",
           backgroundColor: "rgba(75, 192, 192, 0.2)",
           fill: true,
         },

@@ -24,26 +24,27 @@ export const options = {
       display: false,
     },
   },
-};
-const data = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May"],
-  datasets: [
-    {
-      label: "Monthly Sales",
-      data: [65, 59, 80, 81, 56],
-      borderColor: "rgb(75, 192, 192)",
-      backgroundColor: "rgba(75, 192, 192, 0.2)",
-      fill: true,
+  scales: {
+    x: {
+      grid: {
+        display: false, // Hide x-axis grid lines
+      },
     },
-  ],
+    y: {
+      grid: {
+        display: false, // Hide y-axis grid lines
+      },
+    },
+  },
 };
+
 const Charts = () => {
   const { chartData } = useChart();
-  console.log("dataatatata", data);
   return (
-    <div>
-      Charts
-      <Line data={chartData} options={options} />
+    <div className="h-[300px] w-[500px]">
+      <div className="h-full w-full">
+        <Line data={chartData} options={options} />
+      </div>
     </div>
   );
 };

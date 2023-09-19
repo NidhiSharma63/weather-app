@@ -12,15 +12,15 @@ const DailyForecast = () => {
   return (
     <div className="flex mt-10 w-1/2 justify-center  items-center flex-col">
       <div className="w-full">
-        <p className="border-b-2  text-center text-[20px] font-bold text-white">DailyForecast</p>
+        <p className="border-b-2  text-center text-[20px] font-bold ">DailyForecast</p>
       </div>
       <div className="mt-3 flex gap-20">
         {data?.map((data) => {
           return (
-            <div key={data.day} className="flex gap-3 text-white flex-col">
-              <p>{getDay(data?.day)}</p>
+            <div key={data.day} className="flex gap-3  flex-col">
+              <p className="font-medium">{getDay(data?.day)}</p>
               <GetWeatherImage icon={data?.weather} />
-              <p>
+              <p className="font-medium">
                 {convertDailyForeCastToCelsius
                   ? `${kelvinToCelsius(data?.temp)}°C`
                   : `${kelvinToFahrenheit(data?.temp)}°F`}

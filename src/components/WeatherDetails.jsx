@@ -9,57 +9,59 @@ import formatDate from "../utils/formateDate";
 const WeatherDetails = () => {
   const { handleToggleCelsius, temperatureValue, dayData } = useWeatherDetail();
   const { searchTemp, convertDailyForeCastToCelsius } = useUserContext();
-
+  let v = true;
   return (
-    <div className="mt-8 flex flex-col items-center">
+    <div className="mt-6 flex flex-col items-center">
       {/* upper section */}
 
       <div className="flex flex-col items-center">
-        <p className="text-[20px] text-white">{formatDate(new Date())}</p>
-        <p className="text-[40px] text-white font-bold">{searchTemp}</p>
+        <p className="text-[15px]">{formatDate(new Date())}</p>
+        <p className="text-[40px] font-bold">{searchTemp}</p>
       </div>
 
       {/* display temperature */}
 
       <div className="flex gap-2 items-center flex-col">
-        <div>
-          <p className="text-[40px] text-white font-bold">{temperatureValue.temp}</p>
+        <div className="flex items-center justify-center gap-3">
           <GetWeatherImage icon={dayData?.data?.weather[0]?.icon} />
+          <p className="text-[20px] font-bold">{temperatureValue.temp}</p>
         </div>
-        <button className="bg-white px-2 rounded h-[40px] font-medium" onClick={handleToggleCelsius}>
+        <button className="bg-buttonColor px-2 rounded h-[40px] font-medium text-white" onClick={handleToggleCelsius}>
           Convert to {convertDailyForeCastToCelsius ? "Fahrenheit" : "Celsius"}
         </button>
       </div>
-
-      <div className="flex gap-5 mt-3">
+      {/* {v ? (
+        ""
+      ) : ( */}
+      <div className="flex gap-5 mt-3 p-2 flex-col items-center">
         {/* show min max temperature*/}
         <div className="flex gap-5 items-center">
-          <div className="flex items-center gap-3 text-white">
+          <div className="flex items-center gap-3">
             <FontAwesomeIcon icon={faTemperatureLow} />
             <p>Min: &nbsp; {temperatureValue.min} </p>
           </div>
-          <p className="text-white">|</p>
-          <div className="flex items-center gap-3  text-white">
+          <p>|</p>
+          <div className="flex items-center gap-3 ">
             <FontAwesomeIcon icon={faTemperatureHigh} />
             <p>Max: &nbsp;{temperatureValue.max}</p>
           </div>
         </div>
         {/*  */}
-        <p className="text-white">|</p>
         {/*  */}
         {/* show other details */}
         <div className="flex gap-5 items-center">
-          <div className="flex items-center gap-3  text-white">
+          <div className="flex items-center gap-3 ">
             <FontAwesomeIcon icon={faSunPlantWilt} />
             <p>Humidity: &nbsp; {dayData?.data?.main?.humidity}%</p>
           </div>
-          <p className="text-white">|</p>
-          <div className="flex items-center gap-3  text-white">
+          <p>|</p>
+          <div className="flex items-center gap-3 ">
             <FontAwesomeIcon icon={faWind} />
             <p>Wind: &nbsp; {dayData?.data?.wind?.speed}km/h</p>
           </div>
         </div>
       </div>
+      {/* )} */}
     </div>
   );
 };

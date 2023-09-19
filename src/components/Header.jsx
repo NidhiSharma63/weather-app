@@ -25,16 +25,16 @@ const Header = () => {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <h1 className="text-[20px] font-bold text-white">Weather App</h1>
+      <h1 className="text-[18px] font-bold">Weather App</h1>
       <div className="flex items-center gap-2 mt-2">
         <input
           value={userInput}
           onChange={handleChange}
           onBlur={hanldeBlur}
           placeholder="Enter your city name or zipcode"
-          className="w-96 p-2 rounded-sm focus:outline-none font-medium"
+          className="w-96 p-2 rounded-sm focus:outline-none font-medium box-shadow"
         />
-        <button className="bg-white px-4 py-2 rounded-sm font-medium" onClick={handleSearch}>
+        <button className="bg-buttonColor px-4 py-2 rounded-sm font-medium text-white" onClick={handleSearch}>
           Search
         </button>
       </div>
