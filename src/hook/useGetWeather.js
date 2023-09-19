@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { toast } from "react-toastify";
 import { useUserContext } from "../provider/userContextProvider";
 import customAxiosRequest from "../utils/axios";
 import getUrlAccordingToUserInput from "../utils/getUrlAccordingToUserInput";
@@ -21,7 +22,13 @@ const useGetWeather = () => {
           return [];
         }
       },
-      onError: (error) => {},
+      onError: (error) => {
+        if (error.request.status === 404) {
+          toast.error("Please enter a valid city or zip code");
+        } else {
+          toast.error("Something went wrong! please try again later");
+        }
+      },
     });
   };
 
