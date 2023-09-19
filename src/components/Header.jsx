@@ -32,7 +32,7 @@ const Header = () => {
           value={userInput}
           onChange={handleChange}
           placeholder="Enter your city name or zipcode"
-          className="w-50 sm:w-96 p-2 rounded-sm focus:outline-none font-medium box-shadow"
+          className="w-50 sm:w-96 p-2 rounded-sm focus:outline-none font-medium border border-transparent"
         />
         <button className="bg-buttonColor px-4 py-2 rounded-sm font-medium text-white" onClick={handleSearch}>
           Search

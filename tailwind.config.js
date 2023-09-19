@@ -9,6 +9,9 @@ module.exports = {
       textColor: {
         secondary: "#4BC0C0",
       },
+      borderColor: {
+        transparent: "474a48",
+      },
     },
   },
 
