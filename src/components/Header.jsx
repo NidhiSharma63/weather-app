@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 import { useUserContext } from "../provider/userContextProvider";
 
 const Header = () => {
@@ -15,12 +16,13 @@ const Header = () => {
    * handle search
    */
 
-  const hanldeBlur = () => {
-    setSearchTemp(userInput);
-  };
-
   const handleSearch = () => {
+    if (!userInput) {
+      console.log("user input");
+      toast.error("Please enter a valid city name or zip code");
+    }
     setSearch(true);
+    setSearchTemp(userInput);
   };
 
   return (
@@ -30,7 +32,6 @@ const Header = () => {
         <input
           value={userInput}
           onChange={handleChange}
-          onBlur={hanldeBlur}
           placeholder="Enter your city name or zipcode"
           className="w-50 sm:w-96 p-2 rounded-sm focus:outline-none font-medium box-shadow"
         />
