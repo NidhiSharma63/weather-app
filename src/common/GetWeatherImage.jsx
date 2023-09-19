@@ -9,7 +9,6 @@ import snow from "../assets/snowing.png";
 import storm from "../assets/storm.png";
 
 const GetWeatherImage = ({ icon }) => {
-  console.log(icon, "::cinos");
   switch (icon) {
     case "01d":
     case "01n":
