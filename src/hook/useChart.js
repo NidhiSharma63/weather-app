@@ -34,8 +34,9 @@ const useChart = () => {
           label: `Hourly forecast in  ${convertDailyForeCastToCelsius ? "celsius" : "Fahrenheit"}`,
           data: temp,
           borderColor: "rgb(75, 192, 192,0.9)",
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
           fill: true,
+          tension: 0.5,
+          backgroundColor: "rgba(75, 192, 192, 0.1)",
         },
       ],
     });

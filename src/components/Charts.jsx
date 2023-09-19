@@ -1,6 +1,7 @@
 import {
   CategoryScale,
   Chart as ChartJS,
+  Filler,
   Legend,
   LineElement,
   LinearScale,
@@ -12,7 +13,7 @@ import React from "react";
 import { Line } from "react-chartjs-2";
 import useChart from "../hook/useChart";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 export const options = {
   responsive: true,

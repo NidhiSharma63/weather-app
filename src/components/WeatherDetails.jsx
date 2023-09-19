@@ -9,9 +9,9 @@ import formatDate from "../utils/formateDate";
 const WeatherDetails = () => {
   const { handleToggleCelsius, temperatureValue, dayData } = useWeatherDetail();
   const { searchTemp, convertDailyForeCastToCelsius } = useUserContext();
-  let v = true;
+
   return (
-    <div className="mt-6 flex flex-col items-center">
+    <div className="flex flex-col items-center">
       {/* upper section */}
 
       <div className="flex flex-col items-center">
