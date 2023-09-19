@@ -8,7 +8,6 @@ import getDay from "../utils/getDay";
 const DailyForecast = () => {
   const { data } = useDailyForecast();
   const { convertDailyForeCastToCelsius } = useUserContext();
-  console.log(data, ":::data");
 
   return (
     <div className="flex mt-10 w-1/2 justify-center  items-center flex-col">
