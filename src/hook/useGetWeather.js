@@ -24,7 +24,7 @@ const useGetWeather = () => {
       },
       onError: (error) => {
         if (error.request.status === 404) {
-          toast.error("Please enter a valid city or zip code");
+          toast.error("Please enter a valid city or zip code/pin code");
         } else {
           toast.error("Something went wrong! please try again later");
         }
@@ -43,7 +43,6 @@ const useGetWeather = () => {
       queryFn: () => {
         return customAxiosRequest(getUrlAccordingToUserInput(searchTemp, FORECAST_URL));
       },
-      onError: (error) => {},
     });
   };
   return {

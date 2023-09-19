@@ -12,7 +12,7 @@ const DailyForecast = () => {
   const { convertDailyForeCastToCelsius } = useUserContext();
 
   return (
-    <div className="flex mt-0 sm-mt-10 w-1/2 justify-center items-center flex-col">
+    <div className="flex mt-0 sm-mt-10 w-1/2 justify-center items-center flex-col mb-6">
       <div className="w-full">
         <p className="border-b-2  text-center text-[20px] font-bold ">DailyForecast</p>
       </div>
