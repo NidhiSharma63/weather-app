@@ -9,7 +9,19 @@ function getFourDayForeCast(data) {
 
     const isAlreadyAdded = accumulator.find((obj) => obj.day === currentDay);
     if (!isAlreadyAdded) {
-      accumulator.push({ day: currentDay, temp: item.main.temp, weather: item.weather[0]?.icon });
+      accumulator.push({
+        day: currentDay,
+        min: item.main.temp_min,
+        max: item.main.temp_max,
+        weather: item.weather[0]?.icon,
+      });
+    } else {
+      if (isAlreadyAdded.min > item.main.temp_min) {
+        isAlreadyAdded.min = item.main.temp_min;
+      }
+      if (isAlreadyAdded.max < item.main.temp_max) {
+        isAlreadyAdded.max = item.main.temp_max;
+      }
     }
 
     return accumulator;

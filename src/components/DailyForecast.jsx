@@ -1,3 +1,5 @@
+import { faTemperatureHigh, faTemperatureLow } from "@fortawesome/free-solid-svg-icons"; // Import the icon
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import GetWeatherImage from "../common/GetWeatherImage";
 import useDailyForecast from "../hook/useDailyForecast";
@@ -20,11 +22,22 @@ const DailyForecast = () => {
             <div key={data.day} className="flex gap-3  flex-col">
               <p className="font-medium">{getDay(data?.day)}</p>
               <GetWeatherImage icon={data?.weather} />
-              <p className="font-medium">
-                {convertDailyForeCastToCelsius
-                  ? `${kelvinToCelsius(data?.temp)}°C`
-                  : `${kelvinToFahrenheit(data?.temp)}°F`}
-              </p>
+              <div className="flex items-center gap-3">
+                <FontAwesomeIcon icon={faTemperatureLow} className="text-secondary" />
+                <p className="font-medium">
+                  {convertDailyForeCastToCelsius
+                    ? `${kelvinToCelsius(data?.min)}°C`
+                    : `${kelvinToFahrenheit(data?.min)}°F`}
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <FontAwesomeIcon icon={faTemperatureHigh} className="text-secondary" />
+                <p className="font-medium">
+                  {convertDailyForeCastToCelsius
+                    ? `${kelvinToCelsius(data?.max)}°C`
+                    : `${kelvinToFahrenheit(data?.max)}°F`}
+                </p>
+              </div>
             </div>
           );
         })}

@@ -12,6 +12,7 @@ const useDailyForecast = () => {
   useEffect(() => {
     if (!isForeCastDataLoading && foreCastData) {
       const reducedData = getFourDayForeCast(foreCastData);
+      console.log(reducedData, ":::reduec dta");
       setData(reducedData);
     }
   }, [isForeCastDataLoading, foreCastData]);

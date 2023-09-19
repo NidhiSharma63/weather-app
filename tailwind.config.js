@@ -6,6 +6,9 @@ module.exports = {
       backgroundColor: {
         buttonColor: "#4BC0C0", // Define your custom color with the hex code
       },
+      textColor: {
+        secondary: "#4BC0C0",
+      },
     },
   },
 
