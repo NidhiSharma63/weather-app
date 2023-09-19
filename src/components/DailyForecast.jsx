@@ -14,7 +14,7 @@ const DailyForecast = () => {
   return (
     <div className="flex mt-0 sm-mt-10 w-1/2 justify-center items-center flex-col mb-6">
       <div className="w-full">
-        <p className="border-b-2  text-center text-[20px] font-bold ">DailyForecast</p>
+        <p className="border-b-2  text-center text-[20px] font-bold ">Daily Forecast</p>
       </div>
       <div className="mt-3 flex gap-5 sm:gap-20">
         {data?.map((data) => {
