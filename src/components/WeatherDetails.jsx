@@ -1,6 +1,7 @@
 import { faSunPlantWilt, faTemperatureHigh, faTemperatureLow, faWind } from "@fortawesome/free-solid-svg-icons"; // Import the icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import GetWeatherImage from "../common/GetWeatherImage";
 import useWeatherDetail from "../hook/useWeatherDetail";
 import { useUserContext } from "../provider/userContextProvider";
 import formatDate from "../utils/formateDate";
@@ -8,6 +9,7 @@ import formatDate from "../utils/formateDate";
 const WeatherDetails = () => {
   const { handleToggleCelsius, temperatureValue, dayData } = useWeatherDetail();
   const { searchTemp, convertDailyForeCastToCelsius } = useUserContext();
+
   return (
     <div className="mt-8 flex flex-col items-center">
       {/* upper section */}
@@ -19,11 +21,14 @@ const WeatherDetails = () => {
 
       {/* display temperature */}
 
-      <div className="flex gap-9 items-center">
+      <div className="flex gap-2 items-center flex-col">
+        <div>
+          <p className="text-[40px] text-white font-bold">{temperatureValue.temp}</p>
+          <GetWeatherImage icon={dayData?.data?.weather[0]?.icon} />
+        </div>
         <button className="bg-white px-2 rounded h-[40px] font-medium" onClick={handleToggleCelsius}>
           Convert to {convertDailyForeCastToCelsius ? "Fahrenheit" : "Celsius"}
         </button>
-        <p className="text-[40px] text-white font-bold">{temperatureValue.temp}</p>
       </div>
 
       <div className="flex gap-5 mt-3">
