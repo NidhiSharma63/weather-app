@@ -26,7 +26,11 @@ function getFourDayForeCast(data) {
 
     return accumulator;
   }, []);
-  return convertedData?.slice(1, 5);
+
+  const fourDayData = convertedData?.slice(1, 5);
+  const currentDayData = convertedData[0];
+
+  return { fourDayData, currentDayData };
 }
 
 export default getFourDayForeCast;
