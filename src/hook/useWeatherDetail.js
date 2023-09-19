@@ -4,7 +4,7 @@ import { useWeatherContext } from "../provider/weatherContextProvider";
 import { kelvinToCelsius, kelvinToFahrenheit } from "../utils/convertTempData";
 
 const useWeatherDetail = () => {
-  const { dayData } = useWeatherContext();
+  const { dayData, dayDataLoading } = useWeatherContext();
   const { userInput, setConvertDailyForeCastToCelsius } = useUserContext();
   const [temperatureValue, setTemperatureValue] = useState({ temp: "", min: "", max: "" });
   const [convertToCelsius, setConvertToCelsius] = useState(true);
@@ -51,7 +51,7 @@ const useWeatherDetail = () => {
     setConvertDailyForeCastToCelsius((prev) => !prev);
   };
 
-  return { handleToggleCelsius, temperatureValue, dayData, convertToCelsius, userInput };
+  return { handleToggleCelsius, temperatureValue, dayData, convertToCelsius, userInput, dayDataLoading };
 };
 
 export default useWeatherDetail;

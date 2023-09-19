@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext } from "react";
 import useGetWeather from "../hook/useGetWeather";
 
 const WeatherContext = createContext({
@@ -11,12 +11,9 @@ const WeatherContext = createContext({
  * @param children
  */
 export default function WeatherContextProvider({ children }) {
-  const [userInput, setUserInput] = useState("");
-  const [search, setSearch] = useState(false);
   const { useGetCurrentWeather, useGetForeCastWeather } = useGetWeather();
-  const { data: dayData } = useGetCurrentWeather();
+  const { data: dayData, isLoading: dayDataLoading } = useGetCurrentWeather();
   const { data: foreCastData, isLoading: isForeCastDataLoading } = useGetForeCastWeather();
-  const [convertDailyForeCastToCelsius, setConvertDailyForeCastToCelsius] = useState(true);
 
   return (
     <WeatherContext.Provider
@@ -24,12 +21,7 @@ export default function WeatherContextProvider({ children }) {
         dayData,
         foreCastData,
         isForeCastDataLoading,
-        convertDailyForeCastToCelsius,
-        setConvertDailyForeCastToCelsius,
-        userInput,
-        setUserInput,
-        search,
-        setSearch,
+        dayDataLoading,
       }}>
       {children}
     </WeatherContext.Provider>
