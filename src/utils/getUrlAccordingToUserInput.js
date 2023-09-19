@@ -11,7 +11,7 @@ const getUrlAccordingToUserInput = (userInput, url) => {
     /**
      * user input is zip code
      */
-    setUrlAccordingToUserInput = `${url}zip=${userInput}&appid=${process.env.REACT_APP_API_KEY}`;
+    setUrlAccordingToUserInput = `${url}zip=${userInput},in&appid=${process.env.REACT_APP_API_KEY}`;
   } else {
     /**
      * user input is string

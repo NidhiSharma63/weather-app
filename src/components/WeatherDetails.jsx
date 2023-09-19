@@ -8,7 +8,7 @@ import formatDate from "../utils/formateDate";
 
 const WeatherDetails = () => {
   const { handleToggleCelsius, temperatureValue, dayData } = useWeatherDetail();
-  const { searchTemp, convertDailyForeCastToCelsius } = useUserContext();
+  const { convertDailyForeCastToCelsius } = useUserContext();
 
   return (
     <div className="flex flex-col items-center">
@@ -16,7 +16,7 @@ const WeatherDetails = () => {
 
       <div className="flex flex-col items-center">
         <p className="text-[15px]">{formatDate(new Date())}</p>
-        <p className="text-[40px] font-bold">{searchTemp}</p>
+        <p className="text-[40px] font-bold">{dayData?.data?.name}</p>
       </div>
 
       {/* display temperature */}

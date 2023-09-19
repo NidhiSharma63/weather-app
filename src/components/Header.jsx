@@ -18,7 +18,6 @@ const Header = () => {
 
   const handleSearch = () => {
     if (!userInput) {
-      console.log("user input");
       toast.error("Please enter a valid city name or zip code");
     }
     setSearch(true);
