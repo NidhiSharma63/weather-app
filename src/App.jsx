@@ -1,5 +1,5 @@
 import React from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import FadeLoader from "react-spinners/FadeLoader";
 import Charts from "./components/Charts";
 import DailyForecast from "./components/DailyForecast";
 import Header from "./components/Header";
@@ -18,7 +18,7 @@ const App = () => {
         {!dayData && !searchTemp && <p className="font-medium mt-4 font-[40px]">Search today's weather!</p>}
         {searchTemp && (dayDataLoading || isForeCastDataLoading) && (
           <div className="flex items-center mt-4">
-            <ClipLoader color="black" />
+            <FadeLoader color="black" />
           </div>
         )}
         {searchTemp && dayData && foreCastData && (
