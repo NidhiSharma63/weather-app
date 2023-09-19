@@ -42,7 +42,7 @@ export const options = {
 const Charts = () => {
   const { chartData } = useChart();
   return (
-    <div className="h-[300px] w-[500px]">
+    <div className="h-[200px] w-[300px] sm:w-[500px] sm:h-[300px]">
       <div className="h-full w-full">
         <Line data={chartData} options={options} />
       </div>

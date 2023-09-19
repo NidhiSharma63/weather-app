@@ -10,11 +10,11 @@ const DailyForecast = () => {
   const { convertDailyForeCastToCelsius } = useUserContext();
 
   return (
-    <div className="flex mt-10 w-1/2 justify-center  items-center flex-col">
+    <div className="flex mt-0 sm-mt-10 w-1/2 justify-center items-center flex-col">
       <div className="w-full">
         <p className="border-b-2  text-center text-[20px] font-bold ">DailyForecast</p>
       </div>
-      <div className="mt-3 flex gap-20">
+      <div className="mt-3 flex gap-10 sm:gap-20">
         {data?.map((data) => {
           return (
             <div key={data.day} className="flex gap-3  flex-col">

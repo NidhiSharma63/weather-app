@@ -23,7 +23,7 @@ const App = () => {
         )}
         {searchTemp && dayData && foreCastData && (
           <>
-            <div className="flex items-start gap-10 mt-10">
+            <div className="flex md:items-start items-center  gap-10 mt-10 md:flex-row flex-col-reverse">
               <Charts />
               <WeatherDetails />
             </div>
